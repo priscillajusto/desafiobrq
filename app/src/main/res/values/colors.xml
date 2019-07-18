@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purplePrincipal">#673AB7</color>
+    <color name="purpleSecundary">#7F55CC</color>
+    <color name="green">#8BC34A</color>
+    <color name="orange">#FF9800</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#F2F3F4</color>
+    <color name="grayTextPrincipal">#2A3E52</color>
+    <color name="grayTextSecundary">#959DA6</color>
+    <color name="grayButtonDisable">#BEB7B7</color>
+</resources>

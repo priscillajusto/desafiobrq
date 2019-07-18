@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbarDetail"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:constraint_referenced_ids="progressBarDetailCar, textViewLoadingDetailCar" />
+
+    <ProgressBar
+        android:id="@+id/progressBarDetailCar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarDetail"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/textViewLoadingDetailCar"
+        android:text="Carregando..."
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarDetailCar"
+        app:layout_constraintLeft_toLeftOf="@id/progressBarDetailCar"
+        app:layout_constraintRight_toRightOf="@id/progressBarDetailCar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"/>
+
+    <!--<ScrollView-->
+        <!--android:id="@+id/scrollViewCarDetail"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/toolbarDetail"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent">-->
+
+        <!--<androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--android:id="@+id/constraintInfoDetail"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:scrollbars="vertical">-->
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupSucess"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:constraint_referenced_ids="imageViewCarDetail, textViewName, textViewType, textViewPrice, textViewDescriptionDetailCar, textViewAmountCar"/>
+
+        <ImageView
+            android:id="@+id/imageViewCarDetail"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:foregroundGravity="center"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarDetail"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewCarDetail"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/textViewType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="14dp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewName"
+            app:layout_constraintRight_toRightOf="@+id/textViewName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+        <TextView
+            android:id="@+id/textViewPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="18dp"
+            android:textSize="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewType"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewType"
+            app:layout_constraintRight_toRightOf="@+id/textViewType"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/textViewDescriptionDetailCar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:textSize="16dp"
+            android:textAlignment="textStart"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPrice"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewPrice"
+            app:layout_constraintRight_toRightOf="@+id/textViewPrice"
+            android:maxLines="5"
+            android:ellipsize="end"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/imageViewRemove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionDetailCar"
+            app:layout_constraintRight_toLeftOf="@+id/textViewAmountCar"
+            app:srcCompat="@drawable/ic_remove_circle_outline_orange"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/textViewAmountCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginHorizontal="10dp"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintLeft_toRightOf="@+id/imageViewRemove"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionDetailCar"
+            app:layout_constraintRight_toLeftOf="@+id/imageViewAdd"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/imageViewAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_add_circle_outline_orange"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionDetailCar"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/textViewAmountCar"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/buttonDetailCar"
+            android:text="@string/buttonAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:padding="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAmountCar"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:visibility="invisible"/>
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--</ScrollView>-->
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupError"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="textViewDetailCarError, imageViewError"/>
+
+    <ImageView
+        android:id="@+id/imageViewError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:paddingTop="50dp"
+        app:srcCompat="@drawable/ic_refresh"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarDetail"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/textViewDetailCarError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ocorreu um erro ao acessar essa funcionalidade."
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewError"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="visible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CARSHOP</string>
+    <string name="detaiil_car">DETALHE</string>
+    <string name="cart">CARRINHO</string>
+    <string name="buttonAdd">ADICIONAR</string>
+    <string name="buttonBuy">COMPRAR</string>
+    <string name="buttonDelete">Excluir</string>
+</resources>
